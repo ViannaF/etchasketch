@@ -27,10 +27,20 @@ const clearContainer = () => {
 
 // Set a random color for the target element
 const setRandomColor = (event) => {
-  const r = Math.floor(Math.random() * 256);
-  const g = Math.floor(Math.random() * 256);
-  const b = Math.floor(Math.random() * 256);
-  event.target.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+  if (!event.target.dataset.bgColor) {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    const randomColor = `rgb(${r}, ${g}, ${b})`;
+    event.target.style.backgroundColor = randomColor;
+    event.target.dataset.bgColor = randomColor;
+  }
+
+  let rainbowOpacity = parseFloat(event.target.style.opacity) || 0;
+  if (rainbowOpacity < 1) {
+    rainbowOpacity += 0.1;
+    event.target.style.opacity = rainbowOpacity;
+  }
 };
 
 // Incremental opacity for the target element
