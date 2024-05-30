@@ -7,6 +7,7 @@ const eraseBtn = document.querySelector(".erase");
 const MAX_GRID_SIZE = 100;
 const DEFAULT_SIZE = 16;
 let currentMode = "rainbow";
+let currentSize = DEFAULT_SIZE;
 
 // Create a grid of divs inside the container
 const createDivs = (numSquares) => {
@@ -70,10 +71,14 @@ createDivs(DEFAULT_SIZE);
 
 // Event listeners for mode buttons
 rainbowBtn.addEventListener("click", () => {
+  clearContainer();
+  createDivs(currentSize);
   currentMode = "rainbow";
 });
 
 tonalBtn.addEventListener("click", () => {
+  clearContainer();
+  createDivs(currentSize);
   currentMode = "tonal";
 });
 
@@ -83,7 +88,10 @@ eraseBtn.addEventListener("click", () => {
 
 // Event listener for the reset button
 resetBtn.addEventListener("click", () => {
-  const userInput = prompt("Please enter the number of squares per side (1-100):", "16");
+  const userInput = prompt(
+    "Please enter the number of squares per side (1-100):",
+    "16"
+  );
   const gridSize = parseInt(userInput);
 
   if (isNaN(gridSize) || gridSize <= 0 || gridSize > MAX_GRID_SIZE) {
@@ -93,6 +101,7 @@ resetBtn.addEventListener("click", () => {
 
   clearContainer();
   createDivs(gridSize);
+  currentSize = gridSize;
 });
 
 // Add a single event listener for mouseover on the container
