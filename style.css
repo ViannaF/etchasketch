@@ -1,0 +1,48 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+header {
+  margin-top: 1rem;
+}
+
+.outer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 85%;
+}
+
+button {
+  padding: 1rem 1.5rem;
+}
+
+.container {
+  border: 2px solid pink;
+  display: flex;
+  flex-wrap: wrap;
+  height: 75%;
+  width: 75%;
+}
+
+.container div {
+  background-color: blue;
+  border: 1px solid white;
+}
