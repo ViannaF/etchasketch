@@ -27,13 +27,13 @@ const clearContainer = () => {
 
 // Set a random color for the target element
 const setRandomColor = (event) => {
-  if (!event.target.dataset.bgColor) {
+  if (!event.target.classList.contains("colored")) {
     const r = Math.floor(Math.random() * 256);
     const g = Math.floor(Math.random() * 256);
     const b = Math.floor(Math.random() * 256);
     const randomColor = `rgb(${r}, ${g}, ${b})`;
     event.target.style.backgroundColor = randomColor;
-    event.target.dataset.bgColor = randomColor;
+    event.target.classList.add("colored");
   }
 
   let rainbowOpacity = parseFloat(event.target.style.opacity) || 0;
