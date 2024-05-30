@@ -112,6 +112,7 @@ resetBtn.addEventListener("click", () => {
   clearContainer();
   createDivs(gridSize);
   currentSize = gridSize;
+  currentMode = "rainbow";
 });
 
 // Add a single event listener for mouseover on the container
