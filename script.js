@@ -31,7 +31,7 @@ container.addEventListener("mouseover", (event) => {
 });
 
 resetBtn.addEventListener("click", () => {
-  const userInput = prompt("Please enter number of squares per side.");
+  const userInput = prompt("Please enter number of squares per side.", "16");
   const gridSize = parseInt(userInput);
 
   if (isNaN(gridSize) || gridSize <= 0 || gridSize > 100) {
