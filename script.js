@@ -19,8 +19,9 @@ const defaultSize = 16;
 createDivs(defaultSize);
 
 container.addEventListener("mouseover", (event) => {
+    const randomColor = Math.floor(Math.random()*16777215).toString(16);
     if (event.target.classList.contains("inner")) {
-        event.target.style.backgroundColor = "pink";
+        event.target.style.backgroundColor = "#" + randomColor;
     }
 });
 
