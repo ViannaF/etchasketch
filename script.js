@@ -15,18 +15,19 @@ const clearContainer = () => {
   container.replaceChildren();
 };
 
+const setRandomColor = (event) => {
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+  const randomColor = `rgb(${r},${g},${b})`;
+  event.target.style.backgroundColor = randomColor;
+};
+
 const defaultSize = 16;
 createDivs(defaultSize);
 
 container.addEventListener("mouseover", (event) => {
-  if (!event.target.dataset.originalColor) {
-    const r = Math.floor(Math.random() * 256);
-    const g = Math.floor(Math.random() * 256);
-    const b = Math.floor(Math.random() * 256);
-    const randomColor = `rgb(${r},${g},${b})`;
-    event.target.dataset.originalColor = randomColor;
-    event.target.style.backgroundColor = randomColor;
-  }
+  setRandomColor(event);
 });
 
 resetBtn.addEventListener("click", () => {

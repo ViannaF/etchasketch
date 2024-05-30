@@ -35,7 +35,6 @@ button {
 }
 
 .container {
-  border: 2px solid pink;
   display: flex;
   flex-wrap: wrap;
   height: 75%;
@@ -43,6 +42,6 @@ button {
 }
 
 .container div {
-  background-color: blue;
+  background-color: black;
   border: 1px solid white;
 }
